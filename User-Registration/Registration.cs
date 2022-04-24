@@ -24,7 +24,7 @@ namespace User_Registration
         //Creating method to check validation for last name
         public void LastName()
         {
-            Console.WriteLine("Enter the last name = ");
+            Console.Write("Enter the last name = ");
             string name = Console.ReadLine();
             string pattern = "^[A-Z][a-zA-Z]{2,}$";
             if (Validate(name, pattern))
@@ -32,7 +32,6 @@ namespace User_Registration
             else
                 Console.WriteLine("Please enter the valid last name..");
         }
-
 
         //Creating method to check validation for email id
         public void EmailId()
@@ -45,6 +44,19 @@ namespace User_Registration
                 Console.WriteLine("The entered email id is valid!!");
             else
                 Console.WriteLine("Please enter the valid email id..");
+        }
+
+        //Creating method to check validation for mobile number
+        public void MobileNumber()
+        {
+            Console.WriteLine("Enter the mobile number = ");
+            string mobileNumber = Console.ReadLine();
+            string pattern = "^([0-9]{2}[ ]){0,1}[0-9]{10}$";
+
+            if (Validate(mobileNumber, pattern))
+                Console.WriteLine("The entered mobile number is valid!!");
+            else
+                Console.WriteLine("Please enter the valid mobile number..");
         }
 
         //Creating method to check validation
