@@ -7,37 +7,37 @@ using System.Text.RegularExpressions;
 
 namespace User_Registration
 {
-    public class Registration
+    internal class Registration
     {
-        Func<string, string, bool> lambdaValidation = (input, pattern) => { return Regex.IsMatch(input, pattern); };
-        
-
-    //Creating method to check validation for first name
+        //Creating method to check validation for first name
         public void FirstName()
         {
-            Console.Write("\n1.Enter the name = ");
-            string firstName = Console.ReadLine();
-          
+            Console.Write("Enter the name = ");
+            string name = Console.ReadLine();
             string Pattern = "^[A-Z][a-zA-Z]{2,}$";
-
-            try
-            {
-               if ( lambdaValidation(firstName,Pattern))
-               {
-
-                    Console.WriteLine("The entered first name is valid!!");
-               }
-               else
-               {
-                    throw new InvalidInputException("The entered first name is invalid..");
-                    
-                }
-            }
-            catch (InvalidInputException ex)
-            {
-                    Console.WriteLine(ex.Message);
-                    FirstName();
-            }
+            if (Validate(name, Pattern))
+                Console.WriteLine("The entered name is valid!!");
+            else
+                Console.WriteLine("Please enter the valid name..");
         }
 
-       
+        //Creating method to check validation for last name
+        public void LastName()
+        {
+            Console.WriteLine("Enter the last name = ");
+            string name = Console.ReadLine();
+            string pattern = "^[A-Z][a-zA-Z]{2,}$";
+            if (Validate(name, pattern))
+                Console.WriteLine("The entered last name is valid!!");
+            else
+                Console.WriteLine("Please enter the valid last name..");
+        }
+
+        //Creating method to check validation
+        public bool Validate(string info, string Pattern)
+        {
+            return Regex.IsMatch(info, Pattern);
+        }
+
+    }
+}
