@@ -15,6 +15,8 @@ namespace User_Registration
             Registration registration = new Registration();
             registration.FirstName();
             registration.LastName();
+            registration.EmailId();
+            registration.MobileNumber();
             Console.ReadKey();
 
            
