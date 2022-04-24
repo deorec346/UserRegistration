@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace User_Registration
 {
-    internal class Registration
+    public class Registration
     {
         //Creating method to check validation for first name
         public void FirstName()
@@ -72,7 +72,7 @@ namespace User_Registration
         }
 
         //Creating method to check validation
-        public bool Validate(string info, string Pattern)
+        public static bool Validate(string info, string Pattern)
         {
             return Regex.IsMatch(info, Pattern);
         }
