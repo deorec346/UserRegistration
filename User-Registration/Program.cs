@@ -14,10 +14,6 @@ namespace User_Registration
             //Creating object od class
             Registration registration = new Registration();
             registration.FirstName();
-            registration.LastName();
-            registration.EmailId();
-            registration.MobileNumber();
-            registration.Password();
             Console.ReadKey();
 
            
